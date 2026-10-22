@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Incendio de Rio Tambo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--osc:#1c1b19;--crema:#f6f1ea;--blanco:#fff;--rojo:#b5441b;--azul:#2f5d80;--gris:#5b5a57;--borde:#e8e1d6;--texto:#1c1b19}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--crema:#24221f;--blanco:#2d2b28;--texto:#f3eee7;--gris:#bdb7ae;--borde:#3a3733}}
+*{box-sizing:border-box}html{scroll-snap-type:y proximity}
+body{margin:0;background:var(--crema);color:var(--texto);font-family:"Public Sans",system-ui,sans-serif;line-height:1.5}
+h1,h2,h3{font-family:"Oswald",sans-serif;font-weight:600;line-height:1.05;margin:0 0 .5em}
+section{min-height:100vh;padding:clamp(28px,6vw,80px) clamp(16px,6vw,90px);scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center}
+.oscura{background:var(--osc);color:#f6f1ea}.oscura .gris{color:#c9c3ba}
+.etiqueta{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--rojo);margin-bottom:.8em}
+.oscura .etiqueta{color:#f08a4b}
+h1{font-size:clamp(2.6rem,8vw,6rem)}h2{font-size:clamp(1.8rem,4.5vw,3.2rem)}
+.sub{font-size:clamp(1.05rem,2.2vw,1.6rem);max-width:60ch;color:#ddd6cc}
+.gris{color:var(--gris)}.pie{margin-top:2.5em;font-size:.85rem;color:var(--gris)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:22px}
+.card .num{font-family:"Oswald",sans-serif;font-size:clamp(2.4rem,6vw,3.8rem);color:var(--rojo);line-height:1}
+.card h3{font-size:1.35rem;color:var(--rojo);font-weight:500}
+.card.azul{border-top:4px solid var(--azul)}.card.rojo{border-top:4px solid var(--rojo)}
+.card.azul h3{color:var(--azul)}
+table{border-collapse:collapse;width:100%;background:var(--blanco);font-size:.95rem}
+th,td{border:1px solid var(--borde);padding:8px 12px;text-align:left}th{background:rgba(0,0,0,.05)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--borde);background:#fff}
+iframe{width:100%;height:70vh;border:1px solid var(--borde);border-radius:8px;background:#ddd}
+.hallazgo{display:flex;gap:16px;align-items:flex-start;margin:0 0 18px}
+.hallazgo b{font-family:"Oswald",sans-serif;font-size:2.2rem;color:var(--rojo);line-height:1}
+.dos{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start}
+ul{padding-left:1.2em}li{margin:.35em 0}
+@media print{section{min-height:auto;page-break-after:always}}
+</style></head><body>
+
+<section class="oscura">
+  <div class="etiqueta">Ciencia de datos con Python · tarea de incendios · corte 21/10/2026 21:02</div>
+  <h1>¿Cuánto se quemó en Rio Tambo y qué se perdió?</h1>
+  <p class="sub">Un incendio activo de Junin medido desde el espacio con Sentinel-2 (dNBR),
+  focos VIIRS de la NASA y la cobertura del suelo de la ESA. Todo con datos públicos y en CPU.</p>
+</section>
+
+<section>
+  <div class="etiqueta">La respuesta corta</div>
+  <h2>Rio Tambo, Satipo (Junin)</h2>
+  <div class="grid">
+    <div class="card"><div class="num">176 ha</div>
+      <p>quemadas entre el 13/10/2026 y el 20/10/2026 (dNBR ≥ 0.27).</p></div>
+    <div class="card"><div class="num">100 %</div>
+      <p>del área quemada era <b>bosque</b> según ESA WorldCover ?.</p></div>
+    <div class="card"><div class="num">57 ha</div>
+      <p>con severidad moderada-alta o alta: donde la vegetación tardará más en recuperarse.</p></div>
+  </div>
+  <p class="pie">279 focos VIIRS del 14/10/2026 al 17/10/2026 · #1 de 754 incendios del Perú en 7 días</p>
+</section>
+
+<section>
+  <div class="etiqueta">El mapa</div>
+  <h2>Lo marrón es lo que se quemó</h2>
+  <img src="img/mapa_dnbr.png" alt="Falso color Sentinel-2 y severidad dNBR del incendio">
+  <p class="pie">Izquierda: Sentinel-2 en falso color (SWIR-NIR-rojo). Derecha: severidad dNBR con focos VIIRS (rojo) y límites distritales.</p>
+</section>
+
+<section>
+  <div class="etiqueta">Explóralo</div>
+  <h2>Mapa interactivo</h2>
+  <iframe src="mapa.html" title="Mapa interactivo del área quemada" loading="lazy"></iframe>
+  <p class="pie">Activa o apaga capas: satélite, distritos, área quemada y focos (pasa el cursor para ver fecha y satélite).</p>
+</section>
+
+<section>
+  <div class="etiqueta">Tres hallazgos con números</div>
+  <h2>Lo que encontré</h2>
+  <div class='hallazgo'><b>1</b><p>El incendio de Rio Tambo (Satipo, Junin) quemó unas 176 ha entre el 13/10/2026 y el 20/10/2026 (dNBR ≥ 0.27, parches conectados a 279 focos VIIRS). Solo con el umbral, sin exigir focos cerca, saldrían 257 ha: la decisión de método cambia el número.</p></div><div class='hallazgo'><b>2</b><p>Lo que se quemó fue sobre todo 100% bosque (WorldCover ?).</p></div><div class='hallazgo'><b>3</b><p>32% del área quemada tiene severidad moderada-alta o alta (57 ha). En el Perú hubo 8 613 focos VIIRS del 14/10/2026 al 21/10/2026, agrupados en 754 incendios (451 con huella &gt; 100 ha); este es el #1 por número de focos.</p></div>
+</section>
+
+<section>
+  <div class="etiqueta">¿Qué se quemó?</div>
+  <h2>Cobertura y severidad</h2>
+  <div class="dos">
+    <div><img src='img/cobertura.png' alt='Hectáreas quemadas por cobertura del suelo'></div>
+    <div>
+      <table><tr><th>Severidad (USGS)</th><th>ha</th></tr><tr><td>Baja</td><td class='n'>84</td></tr><tr><td>Moderada-baja</td><td class='n'>120</td></tr><tr><td>Moderada-alta</td><td class='n'>55</td></tr><tr><td>Alta</td><td class='n'>2</td></tr></table>
+      <p></p>
+      <table><tr><th>Distrito</th><th>Provincia</th><th>ha quemadas</th></tr><tr><td>Rio Tambo</td><td>Satipo</td><td class='n'>176</td></tr></table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="etiqueta">Contexto nacional</div>
+  <h2>8 613 focos en 7 días, 754 incendios</h2>
+  <img src="img/top_incendios.png" alt="Los 10 incendios con más focos en el Perú">
+  <p class="pie">Focos VIIRS (S-NPP, NOAA-20 y NOAA-21) del 14/10/2026 al 21/10/2026; 451 incendios tienen huella mayor a 100 ha.</p>
+</section>
+
+<section class="oscura">
+  <div class="etiqueta">Cómo lo hice</div>
+  <h2>Mis decisiones de método</h2>
+  <div class="grid">
+    <div class="card" style="background:#2a2926;border-color:#3a3733"><h3>Fechas</h3>
+      <p class="gris">Antes: 13/10/2026 · Después: 20/10/2026. De 15 fechas candidatas, elegí la más reciente con pocas nubes en cada lado.</p></div>
+    <div class="card" style="background:#2a2926;border-color:#3a3733"><h3>Nubes</h3>
+      <p class="gris">16.4% y 53.1% en la zona del incendio. Enmascaré nubes y sombras con la capa SCL; quedó válido el 41% de la zona.</p></div>
+    <div class="card" style="background:#2a2926;border-color:#3a3733"><h3>Umbral</h3>
+      <p class="gris">dNBR ≥ 0.27 = quemado. Solo cuento parches a ≤ 750 m de un foco VIIRS. Sin ese filtro saldrían 257 ha.</p></div>
+    <div class="card" style="background:#2a2926;border-color:#3a3733"><h3>Zona</h3>
+      <p class="gris">Focos a ≤ 1 km y ≤ 48 h forman un incendio. Analicé 3 km alrededor de sus focos, a 20 m por píxel, en UTM (no en grados).</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="etiqueta">Limitaciones</div>
+  <h2>Lo que este número no dice</h2>
+  <ul>
+    <li><b>Un foco de calor no es un incendio:</b> VIIRS ve píxeles de 375 m calientes; puede ser una quema agrícola. Por eso agrupé focos y descarté grupos de menos de 3.</li>
+    <li><b>Las nubes y el humo esconden el fuego:</b> los píxeles nublados en cualquiera de las dos fechas no se cuentan, así que el área puede estar subestimada.</li>
+    <li><b>El incendio puede seguir activo:</b> lo que ardió después del 20/10/2026 no está en la cifra.</li>
+    <li><b>El umbral cambia el resultado:</b> 0,27 es un estándar del USGS, no una verdad; en pastizales de puna la señal es más débil.</li>
+    <li><b>WorldCover es de ?:</b> la cobertura pudo cambiar desde entonces.</li>
+    <li>Herramienta académica: no reemplaza los reportes del COEN, INDECI, SERFOR ni SERNANP.</li>
+  </ul>
+  <p class="pie">Datos: NASA FIRMS (VIIRS) · Sentinel-2 L2A y ESA WorldCover vía Microsoft Planetary Computer · límites INEI (peru-geojson). Python: geopandas, rasterio, rasterstats, folium.</p>
+</section>
+</body></html>

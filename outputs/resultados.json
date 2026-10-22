@@ -1,0 +1,191 @@
+{
+  "corte": "21/10/2026 21:02",
+  "config": {
+    "umbral_dnbr": 0.27,
+    "max_nubes_pre": 20,
+    "max_nubes_post": 30,
+    "resolucion_m": 20,
+    "buffer_semilla_m": 750,
+    "dias_antes": 60
+  },
+  "peru_7d": {
+    "focos": 8613,
+    "incendios": 754,
+    "incendios_mas_100ha": 451,
+    "desde": "14/10/2026",
+    "hasta": "21/10/2026"
+  },
+  "top_incendios": [
+    {
+      "ranking": 1,
+      "distrito": "RIO TAMBO",
+      "provincia": "SATIPO",
+      "departamento": "JUNIN",
+      "focos": 279,
+      "huella_ha": 2729,
+      "inicio": "14/10",
+      "ultimo": "17/10"
+    },
+    {
+      "ranking": 2,
+      "distrito": "CURAHUASI",
+      "provincia": "ABANCAY",
+      "departamento": "APURIMAC",
+      "focos": 201,
+      "huella_ha": 2247,
+      "inicio": "14/10",
+      "ultimo": "20/10"
+    },
+    {
+      "ranking": 3,
+      "distrito": "CHICHAS",
+      "provincia": "CONDESUYOS",
+      "departamento": "AREQUIPA",
+      "focos": 178,
+      "huella_ha": 2428,
+      "inicio": "16/10",
+      "ultimo": "18/10"
+    },
+    {
+      "ranking": 4,
+      "distrito": "MANANTAY",
+      "provincia": "CORONEL PORTILLO",
+      "departamento": "UCAYALI",
+      "focos": 116,
+      "huella_ha": 1410,
+      "inicio": "14/10",
+      "ultimo": "16/10"
+    },
+    {
+      "ranking": 5,
+      "distrito": "TAHUANIA",
+      "provincia": "ATALAYA",
+      "departamento": "UCAYALI",
+      "focos": 108,
+      "huella_ha": 878,
+      "inicio": "15/10",
+      "ultimo": "16/10"
+    },
+    {
+      "ranking": 6,
+      "distrito": "HUANOQUITE",
+      "provincia": "PARURO",
+      "departamento": "CUSCO",
+      "focos": 80,
+      "huella_ha": 1277,
+      "inicio": "14/10",
+      "ultimo": "17/10"
+    },
+    {
+      "ranking": 7,
+      "distrito": "NUEVA REQUENA",
+      "provincia": "CORONEL PORTILLO",
+      "departamento": "UCAYALI",
+      "focos": 65,
+      "huella_ha": 651,
+      "inicio": "15/10",
+      "ultimo": "16/10"
+    },
+    {
+      "ranking": 8,
+      "distrito": "CAYNA",
+      "provincia": "AMBO",
+      "departamento": "HUANUCO",
+      "focos": 63,
+      "huella_ha": 903,
+      "inicio": "18/10",
+      "ultimo": "20/10"
+    },
+    {
+      "ranking": 9,
+      "distrito": "MAZAMARI",
+      "provincia": "SATIPO",
+      "departamento": "JUNIN",
+      "focos": 62,
+      "huella_ha": 820,
+      "inicio": "14/10",
+      "ultimo": "20/10"
+    },
+    {
+      "ranking": 10,
+      "distrito": "TAPO",
+      "provincia": "TARMA",
+      "departamento": "JUNIN",
+      "focos": 61,
+      "huella_ha": 985,
+      "inicio": "15/10",
+      "ultimo": "16/10"
+    }
+  ],
+  "incendio": {
+    "distrito": "RIO TAMBO",
+    "provincia": "SATIPO",
+    "departamento": "JUNIN",
+    "focos": 279,
+    "frp_total_MW": 2156.6,
+    "inicio": "14/10/2026",
+    "ultimo": "17/10/2026",
+    "huella_viirs_ha": 2729,
+    "ranking": 1,
+    "lon": -73.86444516129032,
+    "lat": -11.840550860215053
+  },
+  "escenas": {
+    "antes": {
+      "fecha": "13/10/2026",
+      "nubes": 16.4
+    },
+    "despues": {
+      "fecha": "20/10/2026",
+      "nubes": 53.1
+    },
+    "candidatas": 15
+  },
+  "area": {
+    "ha_sembrado": 176.5,
+    "ha_solo_umbral": 257.4,
+    "pct_pixeles_validos": 40.8,
+    "por_severidad": [
+      {
+        "severidad": "Baja",
+        "ha": 84.5
+      },
+      {
+        "severidad": "Moderada-baja",
+        "ha": 119.9
+      },
+      {
+        "severidad": "Moderada-alta",
+        "ha": 55.1
+      },
+      {
+        "severidad": "Alta",
+        "ha": 1.6
+      }
+    ],
+    "por_distrito": [
+      {
+        "departamento": "JUNIN",
+        "provincia": "SATIPO",
+        "distrito": "RIO TAMBO",
+        "ha_quemadas": 176.5
+      }
+    ],
+    "dnbr_medio": 0.4
+  },
+  "cobertura": {
+    "anio": "?",
+    "clases": [
+      {
+        "clase": "Bosque",
+        "ha": 176.5,
+        "pct": 100.0
+      }
+    ]
+  },
+  "hallazgos": [
+    "El incendio de Rio Tambo (Satipo, Junin) quemó unas 176 ha entre el 13/10/2026 y el 20/10/2026 (dNBR ≥ 0.27, parches conectados a 279 focos VIIRS). Solo con el umbral, sin exigir focos cerca, saldrían 257 ha: la decisión de método cambia el número.",
+    "Lo que se quemó fue sobre todo 100% bosque (WorldCover ?).",
+    "32% del área quemada tiene severidad moderada-alta o alta (57 ha). En el Perú hubo 8 613 focos VIIRS del 14/10/2026 al 21/10/2026, agrupados en 754 incendios (451 con huella > 100 ha); este es el #1 por número de focos."
+  ]
+}
